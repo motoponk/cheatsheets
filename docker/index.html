@@ -57,7 +57,19 @@
     <a class="current" href="./">Docker</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#docker-cleanup">Docker cleanup</a></li>
+    <li class="toctree-l2"><a href="#docker-commands">Docker Commands</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#docker-basics">Docker basics</a></li>
+        
+            <li><a class="toctree-l3" href="#create-docker-image">Create Docker Image</a></li>
+        
+            <li><a class="toctree-l3" href="#docker-instructions">Docker Instructions</a></li>
+        
+            <li><a class="toctree-l3" href="#docker-cleanup">Docker cleanup</a></li>
+        
+        </ul>
     
 
     </ul>
@@ -76,11 +88,6 @@
             <li class="toctree-l1">
 		
     <a class="" href="../linux/">Linux</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../about/">About</a>
 	    </li>
           
         </ul>
@@ -115,23 +122,13 @@
           <div role="main">
             <div class="section">
               
-                <p>Start a container in interactive attached mode:</p>
-<ul>
-<li><code>docker run -i -t ubuntu:16.04 /bin/bash</code></li>
-</ul>
-<p>Detach from a container</p>
-<ul>
-<li><code>Ctrl + P Ctrl + Q</code></li>
-</ul>
-<p>Start a container in detached mode:</p>
-<ul>
-<li><code>docker run -d ubuntu:16.04 /bin/bash</code></li>
-</ul>
-<p>View logs of a container</p>
-<ul>
-<li><code>docker logs ContainerId</code></li>
-</ul>
-<p>Start/Stop/Pause/Restart a container</p>
+                <h1 id="docker-commands">Docker Commands</h1>
+<h2 id="docker-basics">Docker basics</h2>
+<p>Start a container in interactive attached mode: <code>docker run -i -t ubuntu:16.04 /bin/bash</code></p>
+<p>Detach from a container: <code>Ctrl + P Ctrl + Q</code></p>
+<p>Start a container in detached mode: <code>docker run -d ubuntu:16.04 /bin/bash</code></p>
+<p>View logs of a container: <code>docker logs ContainerId</code></p>
+<p>Start/Stop/Pause/Restart a container:</p>
 <ul>
 <li><code>docker start ContainerID</code></li>
 <li><code>docker stop ContainerID</code></li>
@@ -139,58 +136,31 @@
 <li><code>docker pause ContainerID</code></li>
 <li><code>docker unpause ContainerID</code></li>
 </ul>
-<p>List running containers</p>
-<ul>
-<li><code>docker ps</code></li>
-</ul>
-<p>List all containers</p>
-<ul>
-<li><code>docker ps -a</code></li>
-</ul>
-<p>List only container ids</p>
-<ul>
-<li><code>docker ps -aq</code></li>
-</ul>
-<p>List container ids not running</p>
-<ul>
-<li><code>docker ps -aq -f status=exited</code></li>
-</ul>
-<p>Delete a container</p>
-<ul>
-<li><code>docker rm containerId</code></li>
-</ul>
-<p>Delete all stopped containers</p>
+<p>List running containers: <code>docker ps</code></p>
+<p>List all containers: <code>docker ps -a</code></p>
+<p>List only container ids: <code>docker ps -aq</code></p>
+<p>List container ids not running: <code>docker ps -aq -f status=exited</code></p>
+<p>Delete a container: <code>docker rm containerId</code></p>
+<p>Delete all stopped containers:</p>
 <ul>
 <li><code>docker rm $(docker ps -aq status=exited)</code></li>
 <li><code>docker container prune</code></li>
 </ul>
-<p>Automatically remove container once stopped</p>
-<ul>
-<li><code>docker run -i -t --rm ubuntu:16.04 /bin/bash</code></li>
-</ul>
-<p>Commit changes in a docker container</p>
-<ul>
-<li><code>docker commit ContainerID username/repository</code></li>
-</ul>
-<p>Build an image using Dockerfile</p>
-<ul>
-<li><code>docker build -t sivaprasadreddy/myapp:1.0 .</code></li>
-</ul>
-<p>Build an image using different Dockerfile name</p>
-<ul>
-<li><code>docker build -t busyboxplus:1.0 -f ./myfolder/MyDockerFile</code></li>
-</ul>
-<p>View layers of a container</p>
-<ul>
-<li><code>docker history ContainerId</code></li>
-</ul>
+<p>Automatically remove container once stopped: <code>docker run -i -t --rm ubuntu:16.04 /bin/bash</code></p>
+<p>Commit changes in a docker container: <code>docker commit ContainerID username/repository</code></p>
+<h2 id="create-docker-image">Create Docker Image</h2>
+<p>Build an image using Dockerfile: <code>docker build -t sivaprasadreddy/myapp:1.0 .</code></p>
+<p>Build an image using different Dockerfile name: </p>
+<p><code>docker build -t busyboxplus:1.0 -f ./myfolder/MyDockerFile</code></p>
+<p>View layers of a container: <code>docker history ContainerId</code></p>
 <p><strong>Sample Dockerfile</strong></p>
 <pre><code># A basic apache server. To use either add or bind mount content under /var/www
 FROM ubuntu:12.04
 
 LABEL maintainer=&quot;siva@mail.com&quot;
 
-RUN apt-get update &amp;&amp; apt-get install -y apache2 &amp;&amp; apt-get clean &amp;&amp; rm -rf /var/lib/apt/lists/*
+RUN apt-get update &amp;&amp; apt-get install -y apache2 &amp;&amp; \ 
+    apt-get clean &amp;&amp; rm -rf /var/lib/apt/lists/*
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
@@ -201,6 +171,7 @@ EXPOSE 80
 CMD [&quot;/usr/sbin/apache2&quot;, &quot;-D&quot;, &quot;FOREGROUND&quot;]
 </code></pre>
 
+<h2 id="docker-instructions">Docker Instructions</h2>
 <p><strong>FROM</strong> : The FROM instruction initializes a new build stage and sets the Base Image for subsequent instructions.</p>
 <p><code>FROM &lt;image&gt;[:&lt;tag&gt;|@&lt;digest&gt;]</code></p>
 <p><code>FROM ubuntu:latest</code></p>

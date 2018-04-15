@@ -74,82 +74,28 @@
             
     <li class="toctree-l2"><a href="#linux-commands">Linux Commands</a></li>
     
-
-    <li class="toctree-l2"><a href="#to-home-to-home-directory">to home to home directory</a></li>
-    
-
-    <li class="toctree-l2"><a href="#to-know-how-much-time-it-took-to-execute-the-command">to know how much time it took to execute the command</a></li>
-    
-
-    <li class="toctree-l2"><a href="#type-command-to-check-built-in-or-external-command">type command to check built-in or external command</a></li>
-    
-
-    <li class="toctree-l2"><a href="#history-to-see-the-executed-command-history">history to see the executed command history</a></li>
-    
-
-    <li class="toctree-l2"><a href="#to-execute-23rd-command">to execute 23rd command</a></li>
-    
-
-    <li class="toctree-l2"><a href="#to-execute-last-command">to execute last command</a></li>
-    
-
-    <li class="toctree-l2"><a href="#to-edit-history-command-by-number-opens-in-vi">to edit history command by number, opens in VI</a></li>
-    
-
-    <li class="toctree-l2"><a href="#chmod-777-file-rwxrwxrwx">chmod 777 file -&gt; rwxrwxrwx</a></li>
-    
-
-    <li class="toctree-l2"><a href="#chmod-755-file-rwxr-xr-x">chmod 755 file -&gt; rwxr-xr-x</a></li>
-    
-
-    <li class="toctree-l2"><a href="#chmod-644-file-rw-r-r-">chmod 644 file -&gt; rw-r--r-</a></li>
-    
-
-    <li class="toctree-l2"><a href="#chmod-000-file-">chmod 000 file -&gt; ---------</a></li>
-    
-
-    <li class="toctree-l2"><a href="#chown-joe-homejoememotxt">chown joe /home/joe/memo.txt</a></li>
-    
-
-    <li class="toctree-l2"><a href="#ls-l-homejoememotxt">ls -l /home/joe/memo.txt</a></li>
-    
-
-    <li class="toctree-l2"><a href="#chown-joejoe-homejoememotxt">chown joe:joe /home/joe/memo.txt</a></li>
-    
-
-    <li class="toctree-l2"><a href="#ls-l-homejoememotxt_1">ls -l /home/joe/memo.txt</a></li>
-    
-
-    <li class="toctree-l2"><a href="#chown-r-joejoe-mediamyusb">chown -R joe:joe /media/myusb</a></li>
-    
-
-    <li class="toctree-l2"><a href="#locate-bashrc">locate .bashrc</a></li>
-    
-
-    <li class="toctree-l2"><a href="#find-etc-name-passwd">find /etc -name passwd</a></li>
-    
-
-    <li class="toctree-l2"><a href="#find-etc-iname-passwd">find /etc -iname 'passwd'</a></li>
-    
-
-    <li class="toctree-l2"><a href="#find-home-user-chris-or-user-joe-ls">find /home -user chris -or -user joe -ls</a></li>
-    
-
-    <li class="toctree-l2"><a href="#find-etc-group-ntp-ls">find /etc -group ntp -ls</a></li>
-    
-
-    <li class="toctree-l2"><a href="#find-varspool-not-user-root-ls">find /var/spool -not -user root -ls</a></li>
-    
-
-    <li class="toctree-l2"><a href="#find-varallusers-user-joe-ok-mv-tmpjoe">find /var/allusers/ -user joe -ok mv {} /tmp/joe/ \;</a></li>
+        <ul>
+        
+            <li><a class="toctree-l3" href="#terminal-shorcuts">Terminal shorcuts</a></li>
+        
+            <li><a class="toctree-l3" href="#alias">Alias</a></li>
+        
+            <li><a class="toctree-l3" href="#touch-command">touch command</a></li>
+        
+            <li><a class="toctree-l3" href="#ls-command">ls command</a></li>
+        
+            <li><a class="toctree-l3" href="#permissions">Permissions</a></li>
+        
+            <li><a class="toctree-l3" href="#vim">VIM</a></li>
+        
+            <li><a class="toctree-l3" href="#find-command">find command</a></li>
+        
+            <li><a class="toctree-l3" href="#grep-command">grep command</a></li>
+        
+        </ul>
     
 
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../about/">About</a>
 	    </li>
           
         </ul>
@@ -185,136 +131,144 @@
             <div class="section">
               
                 <h1 id="linux-commands">Linux Commands</h1>
-<p>My Linux notes</p>
-<p>The default prompt for regular user is $ and for root user is #
-Ex: [siva@siva-mint ~]$
-    [siva@siva-mint ~]#</p>
-<p>How to determine whether a given Linux is 32 bit or 64 bit?
-$ uname -m
-x86_64 ==&gt; 64-bit kernel
-i686   ==&gt; 32-bit kernel</p>
-<p>$ uname -a
-Linux localhost.localdomain 4.5.7-300.fc24.x86_64 #1 SMP Wed Jun 8 18:12:45 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</p>
-<p>Getting Help on commands</p>
-<p>$ man pwd
+<p>The default prompt for regular user is <strong>$</strong> and for root user is <strong>#</strong></p>
+<p>Ex: </p>
+<pre><code>[siva@siva-mint ~]$
+[siva@siva-mint ~]#
+</code></pre>
+<p><strong>How to determine whether a given Linux is 32 bit or 64 bit?</strong></p>
+<p><code>$ uname -m</code></p>
+<pre><code>x86_64 ==&gt; 64-bit kernel
+i686   ==&gt; 32-bit kernel
+</code></pre>
+<p><strong>Show distribution info:</strong></p>
+<p><code>$ uname -a</code></p>
+<pre><code>Linux localhost.localdomain 4.5.7-300.fc24.x86_64 #1 SMP Wed Jun 8 18:12:45 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+</code></pre>
+<p>Getting Help on commands:</p>
+<pre><code>$ man pwd
 $ info pwd
-$ help pwd</p>
-<h1 id="to-home-to-home-directory">to home to home directory</h1>
-<p>$ cd ~ </p>
-<h1 id="to-know-how-much-time-it-took-to-execute-the-command">to know how much time it took to execute the command</h1>
-<p>$ time pwd </p>
-<p>To find out where a particular command is taken from.
-$ type bash
-bash is /bin/bash</p>
-<h1 id="type-command-to-check-built-in-or-external-command">type command to check built-in or external command</h1>
-<p>$ type pwd
-pwd is a shell builtin</p>
-<p>$ type bash
-bash is /bin/bash</p>
-<p>$ type -a pwd
+$ help pwd
+</code></pre>
+<p>Go to home to home directory: <code>$ cd ~</code></p>
+<p>How much time it took to execute the command: <code>$ time pwd</code></p>
+<p>To find out where a particular command is taken from:</p>
+<pre><code>$ type bash
+bash is /bin/bash
+</code></pre>
+<p><strong>type</strong> command to check built-in or external command</p>
+<pre><code>$ type pwd
 pwd is a shell builtin
-pwd is /bin/pwd</p>
-<h1 id="history-to-see-the-executed-command-history">history to see the executed command history</h1>
-<p>$ history</p>
-<h1 id="to-execute-23rd-command">to execute 23rd command</h1>
-<p>$ !23</p>
-<h1 id="to-execute-last-command">to execute last command</h1>
-<p>$ !! </p>
-<h1 id="to-edit-history-command-by-number-opens-in-vi">to edit history command by number, opens in VI</h1>
-<p>$ fc 12</p>
-<p>To runs the most recent command that contains a particular string of characters.
-$ !?string? </p>
-<p>$ who am i
-siva     pts/0        2016-08-22 10:26 (192.168.56.1)</p>
-<p>$ grep siva /etc/passwd
-siva:x:1000:1000:Siva:/home/siva:/bin/bash</p>
-<p>$ date
-Mon Aug 22 10:33:50 IST 2016</p>
-<p>$ hostname
-siva-centos7</p>
-<p>$ ls -al
+
+$ type bash
+bash is /bin/bash
+</code></pre>
+<p>To see the executed command history: <code>$ history</code></p>
+<p>To execute 23rd command: <code>$ !23</code></p>
+<p>To execute last command: <code>$ !!</code></p>
+<p>To edit history command by number, opens in VI: <code>$ fc 12</code></p>
+<p>To runs the most recent command that contains a particular string of characters: <code>$ !?string?</code></p>
+<p>To show current user:</p>
+<pre><code>$ who am i
+siva     pts/0        2016-08-22 10:26 (192.168.56.1)
+</code></pre>
+<p><code>$ grep siva /etc/passwd</code></p>
+<pre><code>siva:x:1000:1000:Siva:/home/siva:/bin/bash
+</code></pre>
+<p><code>$ hostname</code>
+    siva-centos7</p>
+<p>ls command:</p>
+<pre><code>$ ls -al
 $ ls --help
-$ ls --hide=Desktop</p>
-<p>[siva@siva-centos7 ~]$ date
-Mon Aug 22 10:33:50 IST 2016</p>
-<p>$ date +'%d/%m/%y'
-22/08/16</p>
-<p>$ date +'%A, %B %d, %Y'
-Tuesday, October 21, 2014</p>
-<p>date --help</p>
-<p>[siva@siva-centos7 ~]$ id
-uid=1000(siva) gid=1000(siva) groups=1000(siva),10(wheel) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023</p>
+$ ls --hide=Desktop
+</code></pre>
+<p><code>$ date</code></p>
+<pre><code>Mon Aug 22 10:33:50 IST 2016
+</code></pre>
+<p><code>$ date +'%d/%m/%y'</code></p>
+<pre><code>22/08/16
+</code></pre>
+<p><code>$ date +'%A, %B %d, %Y'</code></p>
+<pre><code>Tuesday, October 21, 2014
+</code></pre>
+<p><code>date --help</code></p>
+<p><code>$ id</code></p>
+<pre><code>uid=1000(siva) gid=1000(siva) groups=1000(siva),10(wheel) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+</code></pre>
 <p>See which users logged into the system currently</p>
-<p>$ who -uH
+<pre><code>$ who -uH
 NAME     LINE         TIME             IDLE          PID COMMENT
 siva     :0           2016-08-22 10:11   ?          2575 (:0)
 siva     tty2         2016-08-22 10:12 00:29        3443
-siva     pts/0        2016-08-22 10:26   .          3935 (192.168.56.1)</p>
-<p>List all aliases
-$ alias</p>
-<p>If a command is not in your PATH variable
-$ locate chage</p>
-<p>Alt+F   Word forward Go forward one word.
-Alt+B   Word backward Go backward one word.
-Ctrl+A  Beginning of line Go to the beginning of the current line.
-Ctrl+E  End of line Go to the end of the line.
-Ctrl+L  Clear screen Clear screen and leave line at the top of the screen.</p>
-<p>Alt+U Uppercase word Change the current word to uppercase.
-Alt+L Lowercase word Change the current word to lowercase.
-Alt+C Capitalize word Change the current word to an initial capital</p>
-<p>alias sai='sudo apt-get install'
-unalias sai</p>
-<p>For all users
-    /etc/profile
-    /etc/bashrc</p>
-<p>User specific config files
-    ~/.bash_profile
-    ~/.bashrc
-    ~/.bash_logout</p>
-<p>To reload config file <br />
-$ source $HOME/.bashrc</p>
-<p>$ touch memo{1,2,3,4,5}
+siva     pts/0        2016-08-22 10:26   .          3935 (192.168.56.1)
+</code></pre>
+<p>List all aliases: <code>$ alias</code></p>
+<p>If a command is not in your PATH variable: <code>$ locate chage</code></p>
+<h2 id="terminal-shorcuts">Terminal shorcuts</h2>
+<pre><code>Alt+F =&gt; Word forward Go forward one word.
+Alt+B =&gt; Word backward Go backward one word.
+Ctrl+A =&gt; Beginning of line Go to the beginning of the current line.
+Ctrl+E =&gt; End of line Go to the end of the line.
+Ctrl+L =&gt; Clear screen Clear screen and leave line at the top of the screen.
+
+Alt+U =&gt; Uppercase word Change the current word to uppercase.
+Alt+L =&gt; Lowercase word Change the current word to lowercase.
+Alt+C =&gt; Capitalize word Change the current word to an initial capital
+</code></pre>
+<h2 id="alias">Alias</h2>
+<pre><code class="bash">alias sai='sudo apt-get install'
+unalias sai
+</code></pre>
+
+<p>For all users</p>
+<pre><code>/etc/profile
+/etc/bashrc
+</code></pre>
+<p>User specific config files</p>
+<pre><code>~/.bash_profile
+~/.bashrc
+~/.bash_logout
+</code></pre>
+<p>To reload config file: <code>$ source ~/.bashrc</code></p>
+<h2 id="touch-command">touch command</h2>
+<pre><code>$ touch memo{1,2,3,4,5}
 $ ls
-memo1 memo2 memo3 memo4 memo5</p>
-<p>$ touch {John,Bill,Sally}-{Breakfast,Lunch,Dinner}
+memo1 memo2 memo3 memo4 memo5
+
+$ touch {John,Bill,Sally}-{Breakfast,Lunch,Dinner}
 $ ls
 Bill-Breakfast Bill-Lunch John-Dinner Sally-Breakfast Sally-Lunch
-Bill-Dinner John-Breakfast John-Lunch Sally-Dinner</p>
-<p>$ rm -f {John,Bill,Sally}-{Breakfast,Lunch,Dinner}</p>
-<p>$ touch {a..f}{1..5}
+Bill-Dinner John-Breakfast John-Lunch Sally-Dinner
+
+$ rm -f {John,Bill,Sally}-{Breakfast,Lunch,Dinner}
+
+$ touch {a..f}{1..5}
 $ ls
 a1 a3 a5 b2 b4 c1 c3 c5 d2 d4 e1 e3 e5 f2 f4
-a2 a4 b1 b3 b5 c2 c4 d1 d3 d5 e2 e4 f1 f3 f5</p>
-<p>$ ls -l
+a2 a4 b1 b3 b5 c2 c4 d1 d3 d5 e2 e4 f1 f3 f5
+</code></pre>
+<h2 id="ls-command">ls command</h2>
+<pre><code>$ ls -l
 total 4
 -rw-rw-r--. 1 joe joe 0 Dec 18 13:38 apple
 lrwxrwxrwx. 1 joe joe 5 Dec 18 13:46 pointer_to_apple -&gt; apple
--rwxr-xr-x. 1 joe joe 0 Dec 18 13:37 scriptx.sh</p>
-<p>To show hidden and non-hidden files:
-$ ls -a</p>
-<p>To list all files by time most recently modified:
-$ ls -at</p>
-<p>To list files and append file-type indicators:</p>
-<p>$ ls -F
-apple banana docs/ grape grapefruit pointer_to_apple@ script.sh* watermelon</p>
-<p>$ ls --hide=g*</p>
-<p>$ ls -ld $HOME/test/</p>
-<p>To list all files and directories recursively from current directory down:
-$ ls -R</p>
-<p>To list files by size:
-$ ls -S</p>
-<p>$ ls -l
-total 4
--rw-rw-r--. 1 joe joe 0 Dec 18 13:38 apple
-lrwxrwxrwx. 1 joe joe 5 Dec 18 13:46 pointer_to_apple -&gt; apple
--rwxr-xr-x. 1 joe joe 0 Dec 18 13:37 scriptx.sh</p>
+-rwxr-xr-x. 1 joe joe 0 Dec 18 13:37 scriptx.sh
+</code></pre>
+<p>To show hidden and non-hidden files:: <code>$ ls -a</code></p>
+<p>To list all files by time most recently modified: <code>$ ls -at</code></p>
+<p>To list files and append file-type indicators: <code>$ ls -F</code></p>
+<p><code>$ ls --hide=g*</code></p>
+<p><code>$ ls -ld $HOME/test/</code></p>
+<p>To list all files and directories recursively from current directory down: <code>$ ls -R</code></p>
+<p>To list files by size: <code>$ ls -S</code></p>
+<h2 id="permissions">Permissions</h2>
 <p>First character of permission:</p>
 <pre><code>hyphen (-) : a regular file
 d : a directory
 l ( lowercase L) : a symbolic link
-b (for a block device), 
-c (for a character device), 
-s (for a socket), 
+b (for a block device)
+c (for a character device)
+s (for a socket)
 p (for a named pipe)
 x: an executable file (a script or binary file that runs as a command)
 </code></pre>
@@ -323,114 +277,137 @@ x: an executable file (a script or binary file that runs as a command)
 <p>r=4, w=2, and x=1</p>
 <p>For example, to make permissions wide open for yourself as owner, 
 you would set the first number to 7 (4+2+1), and then you would give the group and others read-only
-permission by setting both the second and third numbers to 4 (4+0+0), so that the fi nal
+permission by setting both the second and third numbers to 4 (4+0+0), so that the final
 number is 744.</p>
-<h1 id="chmod-777-file-rwxrwxrwx">chmod 777 file -&gt; rwxrwxrwx</h1>
-<h1 id="chmod-755-file-rwxr-xr-x">chmod 755 file -&gt; rwxr-xr-x</h1>
-<h1 id="chmod-644-file-rw-r-r-">chmod 644 file -&gt; rw-r--r-</h1>
-<h1 id="chmod-000-file-">chmod 000 file -&gt; ---------</h1>
-<p>All fi les and directories below, and including, the myapps directory
-$ chmod -R 755 $HOME/myapps</p>
+<pre><code># chmod 777 file -&gt; rwxrwxrwx
+# chmod 755 file -&gt; rwxr-xr-x
+# chmod 644 file -&gt; rw-r--r-
+# chmod 000 file -&gt; ---------
+</code></pre>
+<p>All files and directories below, and including, the myapps directory</p>
+<pre><code>$ chmod -R 755 $HOME/myapps
+</code></pre>
 <p>Changing permissions with chmod (letters)</p>
 <p>user (u), group (g), other (o),all users (a).
 read (r), write (w), and execute (x)</p>
 <p>Current : (rwxrwxrwx).</p>
-<p>$ chmod a-w file -&gt; r-xr-xr-x</p>
-<p>$ chmod o-x file -&gt; rwxrwxrw-</p>
-<p>$ chmod go-rwx file -&gt; rwx------</p>
+<pre><code>$ chmod a-w file -&gt; r-xr-xr-x
+$ chmod o-x file -&gt; rwxrwxrw-
+$ chmod go-rwx file -&gt; rwx------
+</code></pre>
 <p>Current: (---------).</p>
-<p>$ chmod u+rw files -&gt; rw-------
+<pre><code>$ chmod u+rw files -&gt; rw-------
 $ chmod a+x files -&gt; --x--x--x
-$ chmod ug+rx files -&gt; r-xr-x---</p>
-<p>$ chmod -R o-w $HOME/myapps</p>
-<p>Changing fi le ownership</p>
-<h1 id="chown-joe-homejoememotxt">chown joe /home/joe/memo.txt</h1>
-<h1 id="ls-l-homejoememotxt">ls -l /home/joe/memo.txt</h1>
-<p>-rw-r--r--. 1 joe root 0 Dec 19 11:23 /home/joe/memo.txt</p>
+$ chmod ug+rx files -&gt; r-xr-x---
+$ chmod -R o-w $HOME/myapps
+</code></pre>
+<p>Changing file ownership</p>
+<pre><code># chown joe /home/joe/memo.txt
+# ls -l /home/joe/memo.txt
+-rw-r--r--. 1 joe root 0 Dec 19 11:23 /home/joe/memo.txt
+</code></pre>
 <p>To change group as well</p>
-<h1 id="chown-joejoe-homejoememotxt">chown joe:joe /home/joe/memo.txt</h1>
-<h1 id="ls-l-homejoememotxt_1">ls -l /home/joe/memo.txt</h1>
-<p>-rw-r--r--. 1 joe joe 0 Dec 19 11:23 /home/joe/memo.txt</p>
-<h1 id="chown-r-joejoe-mediamyusb">chown -R joe:joe /media/myusb</h1>
+<pre><code># chown joe:joe /home/joe/memo.txt
+# ls -l /home/joe/memo.txt
+-rw-r--r--. 1 joe joe 0 Dec 19 11:23 /home/joe/memo.txt
+
+# chown -R joe:joe /media/myusb
+</code></pre>
 <p>Moving, Copying, and Removing Files</p>
-<p>$ mv abc def
+<pre><code>$ mv abc def
 $ mv abc ~
-$ mv /home/joe/mymemos/ /home/joe/Documents/</p>
-<p>$ cp abc def
+$ mv /home/joe/mymemos/ /home/joe/Documents/
+
+
+$ cp abc def
 $ cp abc ~
-$ cp -r /usr/share/doc/bash-completion<em> /tmp/a/
-$ cp -ra /usr/share/doc/bash-completion</em> /tmp/b/</p>
-<p>$ rm abc
+$ cp -r /usr/share/doc/bash-completion* /tmp/a/
+$ cp -ra /usr/share/doc/bash-completion* /tmp/b/
+
+$ rm abc
 $ rm *
 $ rmdir /home/joe/nothing/
 $ rm -r /home/joe/bigdir/
-$ rm -rf /home/joe/hugedir/</p>
-<p>The backslash causes any command to run unaliased.
-\rm bigdir</p>
-<p>VIM</p>
-<p>0 (zero)—Moves the cursor to the beginning of the current line.
-$ Moves the cursor to the end of the current line.</p>
-<p>ZZ—Saves the current changes to the file and exits from vi.
-:w—Saves the current file but doesn't exit from vi.
-:wq—Works the same as ZZ.
-:q—Quits the current file. This works only if you don’t have any unsaved changes.
-:q!—Quits the current file and doesn’t save the changes you just made to the file.</p>
-<p>$ locate .bashrc
-/etc/skel/.bashrc
-/home/cnegus/.bashrc</p>
-<h1 id="locate-bashrc">locate .bashrc</h1>
-<p>/etc/skel/.bashrc
+$ rm -rf /home/joe/hugedir/
+</code></pre>
+<p>The backslash causes any command to run unaliased.</p>
+<pre><code>\rm bigdir
+</code></pre>
+<h2 id="vim">VIM</h2>
+<pre><code>0 (zero) — Moves the cursor to the beginning of the current line.
+$ Moves the cursor to the end of the current line.
+
+ZZ — Saves the current changes to the file and exits from vi.
+:w — Saves the current file but doesn't exit from vi.
+:wq — Works the same as ZZ.
+:q — Quits the current file. This works only if you don’t have any unsaved changes.
+:q! — Quits the current file and doesn’t save the changes you just made to the file.
+</code></pre>
+<p><code>$ locate .bashrc</code></p>
+<pre><code>/etc/skel/.bashrc
+/home/cnegus/.bashrc
+</code></pre>
+<p><code># locate .bashrc</code></p>
+<pre><code>/etc/skel/.bashrc
 /home/bill/.bashrc
 /home/joe/.bashrc
-/root/.bashrc</p>
-<h1 id="find-etc-name-passwd">find /etc -name passwd</h1>
-<p>/etc/pam.d/passwd
-/etc/passwd</p>
-<h1 id="find-etc-iname-passwd">find /etc -iname '<em>passwd</em>'</h1>
-<p>/etc/pam.d/passwd
+/root/.bashrc
+</code></pre>
+<h2 id="find-command">find command</h2>
+<p><code># find /etc -name passwd</code></p>
+<pre><code>/etc/pam.d/passwd
+/etc/passwd
+</code></pre>
+<p><code># find /etc -iname '*passwd*'</code></p>
+<pre><code>/etc/pam.d/passwd
 /etc/passwd-
 /etc/passwd.OLD
 /etc/passwd
 /etc/MYPASSWD
-/etc/security/opasswd</p>
+/etc/security/opasswd
+</code></pre>
 <p>Finding files by size</p>
-<p>$ find /usr/share/ -size +10M
+<pre><code>$ find /usr/share/ -size +10M
 $ find /mostlybig -size -1M
 $ find /bigdata -size +500M -size -5G -exec du -sh {} \;
 4.1G /bigdata/images/rhel6.img
 606M /bigdata/Fedora-16-i686-Live-Desktop.iso
-560M /bigdata/dance2.avi</p>
+560M /bigdata/dance2.avi
+</code></pre>
 <p>Finding files by user</p>
-<p>$ find /home -user chris -ls</p>
-<h1 id="find-home-user-chris-or-user-joe-ls">find /home -user chris -or -user joe -ls</h1>
-<h1 id="find-etc-group-ntp-ls">find /etc -group ntp -ls</h1>
-<h1 id="find-varspool-not-user-root-ls">find /var/spool -not -user root -ls</h1>
-<p>Finding files by permission
-$ find /bin -perm 755 -ls</p>
-<p>$ find /home/chris/ -perm -222 -type d -ls
+<pre><code>$ find /home -user chris -ls
+# find /home -user chris -or -user joe -ls
+# find /etc -group ntp -ls
+# find /var/spool -not -user root -ls
+</code></pre>
+<p>Finding files by permission</p>
+<pre><code>$ find /bin -perm 755 -ls
+$ find /home/chris/ -perm -222 -type d -ls
 $ find /myreadonly -perm +222 -type f
-$ find . -perm -002 -type f -ls</p>
+$ find . -perm -002 -type f -ls
+</code></pre>
 <p>Finding files by date and time</p>
-<p>changed in past 10 minutes
-$ find /etc/ -mmin -10 </p>
-<p>changed in the past three days
-$ find /bin /usr/bin /sbin /usr/sbin -ctime -3</p>
-<p>have not been accessed in more than 300 days</p>
-<p>$ find /var/ftp /var/www -atime +300</p>
-<p>The time options (-atime, -ctime, and -mtime)  based on the number of days
-The min options (-amin, -cmin, and -mmin) do the same in minutes.</p>
-<p>$ find /etc -iname iptables -exec echo "I found {}" \;
-I found /etc/bash_completion.d/iptables
-I found /etc/sysconfig/iptables</p>
+<p>changed in past 10 minutes: <code>$ find /etc/ -mmin -10</code></p>
+<p>changed in the past three days: <code>$ find /bin /usr/bin /sbin /usr/sbin -ctime -3</code></p>
+<p>have not been accessed in more than 300 days: <code>$ find /var/ftp /var/www -atime +300</code></p>
+<p>The time options (-atime, -ctime, and -mtime)  based on the number of days</p>
+<p>The min options (-amin, -cmin, and -mmin) do the same in minutes.</p>
+<p>$ find /etc -iname iptables -exec echo "I found {}" \;</p>
+<pre><code>I found /etc/bash_completion.d/iptables
+I found /etc/sysconfig/iptables
+</code></pre>
 <p>$ find /usr/share -size +5M -exec du {} \; | sort -nr</p>
-<h1 id="find-varallusers-user-joe-ok-mv-tmpjoe">find /var/allusers/ -user joe -ok mv {} /tmp/joe/ \;</h1>
+<p>$ find /var/allusers/ -user joe -ok mv {} /tmp/joe/ \;</p>
 <p>-ok asks for confirmation</p>
-<p>$ grep desktop /etc/services
-$ grep -i desktop /etc/services</p>
-<p>To search for lines that don’t contain a selected text string, use the -v option.
-$ grep -vi tcp /etc/services</p>
-<p>-r : recursively
--l : list filenames only</p>
+<h2 id="grep-command">grep command</h2>
+<pre><code>$ grep desktop /etc/services
+$ grep -i desktop /etc/services
+</code></pre>
+<p>To search for lines that don’t contain a selected text string, use the -v option.</p>
+<pre><code>$ grep -vi tcp /etc/services
+</code></pre>
+<p>-r : recursively</p>
+<p>-l : list filenames only</p>
 <p>$ grep -rli peerdns /usr/share/doc/</p>
 <p>$ ip addr show | grep inet</p>
               
@@ -439,8 +416,6 @@ $ grep -vi tcp /etc/services</p>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../maven/" class="btn btn-neutral" title="Maven"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -471,8 +446,6 @@ $ grep -vi tcp /etc/services</p>
       
         <span><a href="../maven/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

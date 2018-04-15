@@ -67,10 +67,15 @@
     <a class="current" href="./">Maven</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#commonly-used-plugins">Commonly used Plugins</a></li>
+    <li class="toctree-l2"><a href="#maven">Maven</a></li>
     
-
-    <li class="toctree-l2"><a href="#install-artifacts-into-local-repository">Install artifacts into local repository</a></li>
+        <ul>
+        
+            <li><a class="toctree-l3" href="#install-artifacts-into-local-repository">Install artifacts into local repository</a></li>
+        
+            <li><a class="toctree-l3" href="#commonly-used-plugins">Commonly used Plugins</a></li>
+        
+        </ul>
     
 
     </ul>
@@ -79,11 +84,6 @@
             <li class="toctree-l1">
 		
     <a class="" href="../linux/">Linux</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../about/">About</a>
 	    </li>
           
         </ul>
@@ -118,20 +118,24 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="commonly-used-plugins">Commonly used Plugins</h2>
-<p><sonar.jdbc.url>jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8</sonar.jdbc.url>
-<sonar.jdbc.username>sonar</sonar.jdbc.username>
-<sonar.jdbc.password>sonar</sonar.jdbc.password>
-<!-- Optional URL to server. Default value is http://localhost:9000 -->
-<sonar.host.url>http://localhost:9000</sonar.host.url></p>
-<p><plugin>
-    <groupId>org.codehaus.mojo</groupId>
-    <artifactId>sonar-maven-plugin</artifactId>
-    <version>2.1</version>
-</plugin></p>
+                <h1 id="maven">Maven</h1>
 <h2 id="install-artifacts-into-local-repository">Install artifacts into local repository</h2>
-<p>mvn install:install-file -DgroupId=jdk.tools -DartifactId=jdk.tools -Dpackaging=jar -Dversion=1.6 -Dfile=tools.jar -DgeneratePom=true</p>
-<p>mvn install:install-file -DgroupId=oracle -DartifactId=ojdbc14 -Dpackaging=jar -Dversion=1.0 -Dfile=ojdbc14.jar -DgeneratePom=true</p>
+<p><code>mvn install:install-file -DgroupId=oracle -DartifactId=ojdbc14 -Dpackaging=jar -Dversion=1.0 -Dfile=ojdbc14.jar -DgeneratePom=true</code></p>
+<h2 id="commonly-used-plugins">Commonly used Plugins</h2>
+<h3 id="sonar-maven-plugin">Sonar Maven Plugin</h3>
+<pre><code class="xml">&lt;properties&gt;
+  &lt;sonar.jdbc.url&gt;jdbc:mysql://localhost:3306/sonar&lt;/sonar.jdbc.url&gt;
+  &lt;sonar.jdbc.username&gt;sonar&lt;/sonar.jdbc.username&gt;
+  &lt;sonar.jdbc.password&gt;sonar&lt;/sonar.jdbc.password&gt;
+  &lt;sonar.host.url&gt;http://localhost:9000&lt;/sonar.host.url&gt;
+&lt;/properties&gt;
+
+&lt;plugin&gt;
+    &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+    &lt;artifactId&gt;sonar-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;2.1&lt;/version&gt;
+&lt;/plugin&gt;
+</code></pre>
               
             </div>
           </div>

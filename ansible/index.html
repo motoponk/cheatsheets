@@ -62,15 +62,18 @@
     <a class="current" href="./">Ansible</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#installation">Installation:</a></li>
+    <li class="toctree-l2"><a href="#installation">Installation</a></li>
     
         <ul>
         
-            <li><a class="toctree-l3" href="#ubuntu">Ubuntu:</a></li>
+            <li><a class="toctree-l3" href="#ubuntu">Ubuntu</a></li>
         
-            <li><a class="toctree-l3" href="#macos">MacOS:</a></li>
+            <li><a class="toctree-l3" href="#macos">MacOS</a></li>
         
         </ul>
+    
+
+    <li class="toctree-l2"><a href="#getting-started">Getting Started</a></li>
     
 
     </ul>
@@ -84,11 +87,6 @@
             <li class="toctree-l1">
 		
     <a class="" href="../linux/">Linux</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../about/">About</a>
 	    </li>
           
         </ul>
@@ -123,16 +121,22 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="installation">Installation:</h1>
-<p>http://docs.ansible.com/ansible/latest/intro_installation.html</p>
-<h2 id="ubuntu">Ubuntu:</h2>
-<p><code>$ sudo apt-get install software-properties-common</code> </p>
-<p><code>$ sudo apt-add-repository ppa:ansible/ansible</code> </p>
-<p><code>$ sudo apt-get update</code> </p>
-<p><code>$ sudo apt-get install ansible</code> </p>
-<h2 id="macos">MacOS:</h2>
-<p><code>$ sudo easy_install pip</code></p>
-<p><code>$ sudo pip install ansible</code></p>
+                <h1 id="installation">Installation</h1>
+<p>Instructions: http://docs.ansible.com/ansible/latest/intro_installation.html</p>
+<h2 id="ubuntu">Ubuntu</h2>
+<pre><code class="bash">sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+</code></pre>
+
+<h2 id="macos">MacOS</h2>
+<pre><code class="bash">sudo easy_install pip
+sudo pip install ansible
+</code></pre>
+
+<h1 id="getting-started">Getting Started</h1>
+<p><code>ansible --version</code></p>
               
             </div>
           </div>
