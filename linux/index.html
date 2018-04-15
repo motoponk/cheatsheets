@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Linux - Quick Reference Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Linux";
+    var mkdocs_page_input_path = "linux.md";
+    var mkdocs_page_url = "/linux/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Quick Reference Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../docker/">Docker</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ansible/">Ansible</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../maven/">Maven</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Linux</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#linux-commands">Linux Commands</a></li>
+    
+
+    <li class="toctree-l2"><a href="#to-home-to-home-directory">to home to home directory</a></li>
+    
+
+    <li class="toctree-l2"><a href="#to-know-how-much-time-it-took-to-execute-the-command">to know how much time it took to execute the command</a></li>
+    
+
+    <li class="toctree-l2"><a href="#type-command-to-check-built-in-or-external-command">type command to check built-in or external command</a></li>
+    
+
+    <li class="toctree-l2"><a href="#history-to-see-the-executed-command-history">history to see the executed command history</a></li>
+    
+
+    <li class="toctree-l2"><a href="#to-execute-23rd-command">to execute 23rd command</a></li>
+    
+
+    <li class="toctree-l2"><a href="#to-execute-last-command">to execute last command</a></li>
+    
+
+    <li class="toctree-l2"><a href="#to-edit-history-command-by-number-opens-in-vi">to edit history command by number, opens in VI</a></li>
+    
+
+    <li class="toctree-l2"><a href="#chmod-777-file-rwxrwxrwx">chmod 777 file -&gt; rwxrwxrwx</a></li>
+    
+
+    <li class="toctree-l2"><a href="#chmod-755-file-rwxr-xr-x">chmod 755 file -&gt; rwxr-xr-x</a></li>
+    
+
+    <li class="toctree-l2"><a href="#chmod-644-file-rw-r-r-">chmod 644 file -&gt; rw-r--r-</a></li>
+    
+
+    <li class="toctree-l2"><a href="#chmod-000-file-">chmod 000 file -&gt; ---------</a></li>
+    
+
+    <li class="toctree-l2"><a href="#chown-joe-homejoememotxt">chown joe /home/joe/memo.txt</a></li>
+    
+
+    <li class="toctree-l2"><a href="#ls-l-homejoememotxt">ls -l /home/joe/memo.txt</a></li>
+    
+
+    <li class="toctree-l2"><a href="#chown-joejoe-homejoememotxt">chown joe:joe /home/joe/memo.txt</a></li>
+    
+
+    <li class="toctree-l2"><a href="#ls-l-homejoememotxt_1">ls -l /home/joe/memo.txt</a></li>
+    
+
+    <li class="toctree-l2"><a href="#chown-r-joejoe-mediamyusb">chown -R joe:joe /media/myusb</a></li>
+    
+
+    <li class="toctree-l2"><a href="#locate-bashrc">locate .bashrc</a></li>
+    
+
+    <li class="toctree-l2"><a href="#find-etc-name-passwd">find /etc -name passwd</a></li>
+    
+
+    <li class="toctree-l2"><a href="#find-etc-iname-passwd">find /etc -iname 'passwd'</a></li>
+    
+
+    <li class="toctree-l2"><a href="#find-home-user-chris-or-user-joe-ls">find /home -user chris -or -user joe -ls</a></li>
+    
+
+    <li class="toctree-l2"><a href="#find-etc-group-ntp-ls">find /etc -group ntp -ls</a></li>
+    
+
+    <li class="toctree-l2"><a href="#find-varspool-not-user-root-ls">find /var/spool -not -user root -ls</a></li>
+    
+
+    <li class="toctree-l2"><a href="#find-varallusers-user-joe-ok-mv-tmpjoe">find /var/allusers/ -user joe -ok mv {} /tmp/joe/ \;</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Quick Reference Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Linux</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="linux-commands">Linux Commands</h1>
+<p>My Linux notes</p>
+<p>The default prompt for regular user is $ and for root user is #
+Ex: [siva@siva-mint ~]$
+    [siva@siva-mint ~]#</p>
+<p>How to determine whether a given Linux is 32 bit or 64 bit?
+$ uname -m
+x86_64 ==&gt; 64-bit kernel
+i686   ==&gt; 32-bit kernel</p>
+<p>$ uname -a
+Linux localhost.localdomain 4.5.7-300.fc24.x86_64 #1 SMP Wed Jun 8 18:12:45 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</p>
+<p>Getting Help on commands</p>
+<p>$ man pwd
+$ info pwd
+$ help pwd</p>
+<h1 id="to-home-to-home-directory">to home to home directory</h1>
+<p>$ cd ~ </p>
+<h1 id="to-know-how-much-time-it-took-to-execute-the-command">to know how much time it took to execute the command</h1>
+<p>$ time pwd </p>
+<p>To find out where a particular command is taken from.
+$ type bash
+bash is /bin/bash</p>
+<h1 id="type-command-to-check-built-in-or-external-command">type command to check built-in or external command</h1>
+<p>$ type pwd
+pwd is a shell builtin</p>
+<p>$ type bash
+bash is /bin/bash</p>
+<p>$ type -a pwd
+pwd is a shell builtin
+pwd is /bin/pwd</p>
+<h1 id="history-to-see-the-executed-command-history">history to see the executed command history</h1>
+<p>$ history</p>
+<h1 id="to-execute-23rd-command">to execute 23rd command</h1>
+<p>$ !23</p>
+<h1 id="to-execute-last-command">to execute last command</h1>
+<p>$ !! </p>
+<h1 id="to-edit-history-command-by-number-opens-in-vi">to edit history command by number, opens in VI</h1>
+<p>$ fc 12</p>
+<p>To runs the most recent command that contains a particular string of characters.
+$ !?string? </p>
+<p>$ who am i
+siva     pts/0        2016-08-22 10:26 (192.168.56.1)</p>
+<p>$ grep siva /etc/passwd
+siva:x:1000:1000:Siva:/home/siva:/bin/bash</p>
+<p>$ date
+Mon Aug 22 10:33:50 IST 2016</p>
+<p>$ hostname
+siva-centos7</p>
+<p>$ ls -al
+$ ls --help
+$ ls --hide=Desktop</p>
+<p>[siva@siva-centos7 ~]$ date
+Mon Aug 22 10:33:50 IST 2016</p>
+<p>$ date +'%d/%m/%y'
+22/08/16</p>
+<p>$ date +'%A, %B %d, %Y'
+Tuesday, October 21, 2014</p>
+<p>date --help</p>
+<p>[siva@siva-centos7 ~]$ id
+uid=1000(siva) gid=1000(siva) groups=1000(siva),10(wheel) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023</p>
+<p>See which users logged into the system currently</p>
+<p>$ who -uH
+NAME     LINE         TIME             IDLE          PID COMMENT
+siva     :0           2016-08-22 10:11   ?          2575 (:0)
+siva     tty2         2016-08-22 10:12 00:29        3443
+siva     pts/0        2016-08-22 10:26   .          3935 (192.168.56.1)</p>
+<p>List all aliases
+$ alias</p>
+<p>If a command is not in your PATH variable
+$ locate chage</p>
+<p>Alt+F   Word forward Go forward one word.
+Alt+B   Word backward Go backward one word.
+Ctrl+A  Beginning of line Go to the beginning of the current line.
+Ctrl+E  End of line Go to the end of the line.
+Ctrl+L  Clear screen Clear screen and leave line at the top of the screen.</p>
+<p>Alt+U Uppercase word Change the current word to uppercase.
+Alt+L Lowercase word Change the current word to lowercase.
+Alt+C Capitalize word Change the current word to an initial capital</p>
+<p>alias sai='sudo apt-get install'
+unalias sai</p>
+<p>For all users
+    /etc/profile
+    /etc/bashrc</p>
+<p>User specific config files
+    ~/.bash_profile
+    ~/.bashrc
+    ~/.bash_logout</p>
+<p>To reload config file <br />
+$ source $HOME/.bashrc</p>
+<p>$ touch memo{1,2,3,4,5}
+$ ls
+memo1 memo2 memo3 memo4 memo5</p>
+<p>$ touch {John,Bill,Sally}-{Breakfast,Lunch,Dinner}
+$ ls
+Bill-Breakfast Bill-Lunch John-Dinner Sally-Breakfast Sally-Lunch
+Bill-Dinner John-Breakfast John-Lunch Sally-Dinner</p>
+<p>$ rm -f {John,Bill,Sally}-{Breakfast,Lunch,Dinner}</p>
+<p>$ touch {a..f}{1..5}
+$ ls
+a1 a3 a5 b2 b4 c1 c3 c5 d2 d4 e1 e3 e5 f2 f4
+a2 a4 b1 b3 b5 c2 c4 d1 d3 d5 e2 e4 f1 f3 f5</p>
+<p>$ ls -l
+total 4
+-rw-rw-r--. 1 joe joe 0 Dec 18 13:38 apple
+lrwxrwxrwx. 1 joe joe 5 Dec 18 13:46 pointer_to_apple -&gt; apple
+-rwxr-xr-x. 1 joe joe 0 Dec 18 13:37 scriptx.sh</p>
+<p>To show hidden and non-hidden files:
+$ ls -a</p>
+<p>To list all files by time most recently modified:
+$ ls -at</p>
+<p>To list files and append file-type indicators:</p>
+<p>$ ls -F
+apple banana docs/ grape grapefruit pointer_to_apple@ script.sh* watermelon</p>
+<p>$ ls --hide=g*</p>
+<p>$ ls -ld $HOME/test/</p>
+<p>To list all files and directories recursively from current directory down:
+$ ls -R</p>
+<p>To list files by size:
+$ ls -S</p>
+<p>$ ls -l
+total 4
+-rw-rw-r--. 1 joe joe 0 Dec 18 13:38 apple
+lrwxrwxrwx. 1 joe joe 5 Dec 18 13:46 pointer_to_apple -&gt; apple
+-rwxr-xr-x. 1 joe joe 0 Dec 18 13:37 scriptx.sh</p>
+<p>First character of permission:</p>
+<pre><code>hyphen (-) : a regular file
+d : a directory
+l ( lowercase L) : a symbolic link
+b (for a block device), 
+c (for a character device), 
+s (for a socket), 
+p (for a named pipe)
+x: an executable file (a script or binary file that runs as a command)
+</code></pre>
+<p>Changing permissions with chmod (numbers)</p>
+<p>each permission (read, write, and execute) is assigned a number</p>
+<p>r=4, w=2, and x=1</p>
+<p>For example, to make permissions wide open for yourself as owner, 
+you would set the first number to 7 (4+2+1), and then you would give the group and others read-only
+permission by setting both the second and third numbers to 4 (4+0+0), so that the fi nal
+number is 744.</p>
+<h1 id="chmod-777-file-rwxrwxrwx">chmod 777 file -&gt; rwxrwxrwx</h1>
+<h1 id="chmod-755-file-rwxr-xr-x">chmod 755 file -&gt; rwxr-xr-x</h1>
+<h1 id="chmod-644-file-rw-r-r-">chmod 644 file -&gt; rw-r--r-</h1>
+<h1 id="chmod-000-file-">chmod 000 file -&gt; ---------</h1>
+<p>All fi les and directories below, and including, the myapps directory
+$ chmod -R 755 $HOME/myapps</p>
+<p>Changing permissions with chmod (letters)</p>
+<p>user (u), group (g), other (o),all users (a).
+read (r), write (w), and execute (x)</p>
+<p>Current : (rwxrwxrwx).</p>
+<p>$ chmod a-w file -&gt; r-xr-xr-x</p>
+<p>$ chmod o-x file -&gt; rwxrwxrw-</p>
+<p>$ chmod go-rwx file -&gt; rwx------</p>
+<p>Current: (---------).</p>
+<p>$ chmod u+rw files -&gt; rw-------
+$ chmod a+x files -&gt; --x--x--x
+$ chmod ug+rx files -&gt; r-xr-x---</p>
+<p>$ chmod -R o-w $HOME/myapps</p>
+<p>Changing fi le ownership</p>
+<h1 id="chown-joe-homejoememotxt">chown joe /home/joe/memo.txt</h1>
+<h1 id="ls-l-homejoememotxt">ls -l /home/joe/memo.txt</h1>
+<p>-rw-r--r--. 1 joe root 0 Dec 19 11:23 /home/joe/memo.txt</p>
+<p>To change group as well</p>
+<h1 id="chown-joejoe-homejoememotxt">chown joe:joe /home/joe/memo.txt</h1>
+<h1 id="ls-l-homejoememotxt_1">ls -l /home/joe/memo.txt</h1>
+<p>-rw-r--r--. 1 joe joe 0 Dec 19 11:23 /home/joe/memo.txt</p>
+<h1 id="chown-r-joejoe-mediamyusb">chown -R joe:joe /media/myusb</h1>
+<p>Moving, Copying, and Removing Files</p>
+<p>$ mv abc def
+$ mv abc ~
+$ mv /home/joe/mymemos/ /home/joe/Documents/</p>
+<p>$ cp abc def
+$ cp abc ~
+$ cp -r /usr/share/doc/bash-completion<em> /tmp/a/
+$ cp -ra /usr/share/doc/bash-completion</em> /tmp/b/</p>
+<p>$ rm abc
+$ rm *
+$ rmdir /home/joe/nothing/
+$ rm -r /home/joe/bigdir/
+$ rm -rf /home/joe/hugedir/</p>
+<p>The backslash causes any command to run unaliased.
+\rm bigdir</p>
+<p>VIM</p>
+<p>0 (zero)—Moves the cursor to the beginning of the current line.
+$ Moves the cursor to the end of the current line.</p>
+<p>ZZ—Saves the current changes to the file and exits from vi.
+:w—Saves the current file but doesn't exit from vi.
+:wq—Works the same as ZZ.
+:q—Quits the current file. This works only if you don’t have any unsaved changes.
+:q!—Quits the current file and doesn’t save the changes you just made to the file.</p>
+<p>$ locate .bashrc
+/etc/skel/.bashrc
+/home/cnegus/.bashrc</p>
+<h1 id="locate-bashrc">locate .bashrc</h1>
+<p>/etc/skel/.bashrc
+/home/bill/.bashrc
+/home/joe/.bashrc
+/root/.bashrc</p>
+<h1 id="find-etc-name-passwd">find /etc -name passwd</h1>
+<p>/etc/pam.d/passwd
+/etc/passwd</p>
+<h1 id="find-etc-iname-passwd">find /etc -iname '<em>passwd</em>'</h1>
+<p>/etc/pam.d/passwd
+/etc/passwd-
+/etc/passwd.OLD
+/etc/passwd
+/etc/MYPASSWD
+/etc/security/opasswd</p>
+<p>Finding files by size</p>
+<p>$ find /usr/share/ -size +10M
+$ find /mostlybig -size -1M
+$ find /bigdata -size +500M -size -5G -exec du -sh {} \;
+4.1G /bigdata/images/rhel6.img
+606M /bigdata/Fedora-16-i686-Live-Desktop.iso
+560M /bigdata/dance2.avi</p>
+<p>Finding files by user</p>
+<p>$ find /home -user chris -ls</p>
+<h1 id="find-home-user-chris-or-user-joe-ls">find /home -user chris -or -user joe -ls</h1>
+<h1 id="find-etc-group-ntp-ls">find /etc -group ntp -ls</h1>
+<h1 id="find-varspool-not-user-root-ls">find /var/spool -not -user root -ls</h1>
+<p>Finding files by permission
+$ find /bin -perm 755 -ls</p>
+<p>$ find /home/chris/ -perm -222 -type d -ls
+$ find /myreadonly -perm +222 -type f
+$ find . -perm -002 -type f -ls</p>
+<p>Finding files by date and time</p>
+<p>changed in past 10 minutes
+$ find /etc/ -mmin -10 </p>
+<p>changed in the past three days
+$ find /bin /usr/bin /sbin /usr/sbin -ctime -3</p>
+<p>have not been accessed in more than 300 days</p>
+<p>$ find /var/ftp /var/www -atime +300</p>
+<p>The time options (-atime, -ctime, and -mtime)  based on the number of days
+The min options (-amin, -cmin, and -mmin) do the same in minutes.</p>
+<p>$ find /etc -iname iptables -exec echo "I found {}" \;
+I found /etc/bash_completion.d/iptables
+I found /etc/sysconfig/iptables</p>
+<p>$ find /usr/share -size +5M -exec du {} \; | sort -nr</p>
+<h1 id="find-varallusers-user-joe-ok-mv-tmpjoe">find /var/allusers/ -user joe -ok mv {} /tmp/joe/ \;</h1>
+<p>-ok asks for confirmation</p>
+<p>$ grep desktop /etc/services
+$ grep -i desktop /etc/services</p>
+<p>To search for lines that don’t contain a selected text string, use the -v option.
+$ grep -vi tcp /etc/services</p>
+<p>-r : recursively
+-l : list filenames only</p>
+<p>$ grep -rli peerdns /usr/share/doc/</p>
+<p>$ ip addr show | grep inet</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../maven/" class="btn btn-neutral" title="Maven"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../maven/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

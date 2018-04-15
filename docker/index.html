@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Docker - Quick Reference Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Docker";
+    var mkdocs_page_input_path = "docker.md";
+    var mkdocs_page_url = "/docker/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Quick Reference Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Docker</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#docker-cleanup">Docker cleanup</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ansible/">Ansible</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../maven/">Maven</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../linux/">Linux</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Quick Reference Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Docker</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Start a container in interactive attached mode:</p>
+<ul>
+<li><code>docker run -i -t ubuntu:16.04 /bin/bash</code></li>
+</ul>
+<p>Detach from a container</p>
+<ul>
+<li><code>Ctrl + P Ctrl + Q</code></li>
+</ul>
+<p>Start a container in detached mode:</p>
+<ul>
+<li><code>docker run -d ubuntu:16.04 /bin/bash</code></li>
+</ul>
+<p>View logs of a container</p>
+<ul>
+<li><code>docker logs ContainerId</code></li>
+</ul>
+<p>Start/Stop/Pause/Restart a container</p>
+<ul>
+<li><code>docker start ContainerID</code></li>
+<li><code>docker stop ContainerID</code></li>
+<li><code>docker restart ContainerID</code></li>
+<li><code>docker pause ContainerID</code></li>
+<li><code>docker unpause ContainerID</code></li>
+</ul>
+<p>List running containers</p>
+<ul>
+<li><code>docker ps</code></li>
+</ul>
+<p>List all containers</p>
+<ul>
+<li><code>docker ps -a</code></li>
+</ul>
+<p>List only container ids</p>
+<ul>
+<li><code>docker ps -aq</code></li>
+</ul>
+<p>List container ids not running</p>
+<ul>
+<li><code>docker ps -aq -f status=exited</code></li>
+</ul>
+<p>Delete a container</p>
+<ul>
+<li><code>docker rm containerId</code></li>
+</ul>
+<p>Delete all stopped containers</p>
+<ul>
+<li><code>docker rm $(docker ps -aq status=exited)</code></li>
+<li><code>docker container prune</code></li>
+</ul>
+<p>Automatically remove container once stopped</p>
+<ul>
+<li><code>docker run -i -t --rm ubuntu:16.04 /bin/bash</code></li>
+</ul>
+<p>Commit changes in a docker container</p>
+<ul>
+<li><code>docker commit ContainerID username/repository</code></li>
+</ul>
+<p>Build an image using Dockerfile</p>
+<ul>
+<li><code>docker build -t sivaprasadreddy/myapp:1.0 .</code></li>
+</ul>
+<p>Build an image using different Dockerfile name</p>
+<ul>
+<li><code>docker build -t busyboxplus:1.0 -f ./myfolder/MyDockerFile</code></li>
+</ul>
+<p>View layers of a container</p>
+<ul>
+<li><code>docker history ContainerId</code></li>
+</ul>
+<p><strong>Sample Dockerfile</strong></p>
+<pre><code># A basic apache server. To use either add or bind mount content under /var/www
+FROM ubuntu:12.04
+
+LABEL maintainer=&quot;siva@mail.com&quot;
+
+RUN apt-get update &amp;&amp; apt-get install -y apache2 &amp;&amp; apt-get clean &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+
+EXPOSE 80
+
+CMD [&quot;/usr/sbin/apache2&quot;, &quot;-D&quot;, &quot;FOREGROUND&quot;]
+</code></pre>
+
+<p><strong>FROM</strong> : The FROM instruction initializes a new build stage and sets the Base Image for subsequent instructions.</p>
+<p><code>FROM &lt;image&gt;[:&lt;tag&gt;|@&lt;digest&gt;]</code></p>
+<p><code>FROM ubuntu:latest</code></p>
+<p><strong>COPY</strong>: The COPY instruction copies new files or directories from <code>&lt;src&gt;</code> and adds them to the filesystem of the container at the path <code>&lt;dest&gt;</code>.</p>
+<p><code>COPY &lt;src&gt; ... &lt;dst&gt;</code></p>
+<p><code>COPY html /var/www/html</code></p>
+<p><code>COPY httpd.conf magic /etc/httpd/conf/</code></p>
+<p><strong>ADD</strong>: The ADD instruction copies new files, directories or remote file URLs from <code>&lt;src&gt;</code> and adds them to the filesystem of the image at the path <code>&lt;dest&gt;</code>.</p>
+<p><code>ADD &lt;src&gt; ... &lt;dst&gt;</code></p>
+<p><code>ADD web-page-config.tar /</code></p>
+<p><strong>ENV</strong>: The ENV instruction sets the environment variable <code>&lt;key&gt;</code> to the value <code>&lt;value&gt;</code>.</p>
+<p><code>ENV &lt;key&gt; &lt;value&gt;</code></p>
+<p><code>ENV DEBUG_LVL 3</code></p>
+<p><code>ENV APACHE_LOG_DIR /var/log/apache</code></p>
+<p><strong>WORKDIR</strong> : The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile. If the WORKDIR doesn’t exist, it will be created even if it’s not used in any subsequent Dockerfile instruction.</p>
+<p><code>WORKDIR &lt;dirpath&gt;</code></p>
+<p><code>WORKDIR /var/log</code></p>
+<p><strong>EXPOSE</strong>: The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime.</p>
+<p><code>EXPOSE &lt;port&gt;[/&lt;proto&gt;] [&lt;port&gt;[/&lt;proto&gt;]...]</code></p>
+<p><code>EXPOSE 8080 8787</code></p>
+<p><strong>LABEL</strong>: The LABEL instruction adds metadata to an image. A LABEL is a key-value pair.</p>
+<p><code>LABEL &lt;key-1&gt;=&lt;val-1&gt; &lt;key-2&gt;=&lt;val-2&gt; ... &lt;key-n&gt;=&lt;val-n&gt;</code></p>
+<p><code>LABEL version="2.0" release-date="2016-08-05"</code></p>
+<p><strong>RUN</strong> The <code>RUN</code> command executes during build time.</p>
+<p><code>RUN &lt;command&gt;</code> (or) <code>RUN ["&lt;exec&gt;", "&lt;arg-1&gt;", ..., "&lt;arg-n&gt;"]</code></p>
+<ul>
+<li><code>RUN echo "echo Welcome to Docker!" &gt;&gt; /root/.bashrc</code></li>
+<li><code>RUN ["bash", "-c", "rm", "-rf", "/tmp/abc"]</code></li>
+</ul>
+<p><strong>CMD</strong>: The CMD is to provide defaults for an executing container and runs when container starts. There can only be one CMD instruction in a Dockerfile. If you list more than one CMD then only the last CMD will take effect.</p>
+<p><code>CMD &lt;command&gt;</code> (or) <code>CMD ["&lt;exec&gt;", "&lt;arg-1&gt;", ..., "&lt;arg-n&gt;"]</code> (or) <code>CMD ["&lt;arg-1&gt;", ..., "&lt;arg-n&gt;"]</code></p>
+<p>//Dockerfile to demonstrate the behavior of CMD</p>
+<pre><code>FROM busybox:latest
+MAINTAINER Siva &lt;sivaprasadreddy.k@gmail.com&gt;
+CMD [&quot;echo&quot;, &quot;Dockerfile CMD demo&quot;]
+</code></pre>
+
+<p><code>&gt; docker build -t cmd-demo .</code></p>
+<p><code>&gt; sudo docker run cmd-demo</code></p>
+<p><strong>Output</strong> : Dockerfile CMD demo</p>
+<p><code>&gt; sudo docker run cmd-demo echo Override CMD demo</code></p>
+<p><strong>Output</strong> : Override CMD demo</p>
+<p><strong>ENTRYPOINT</strong>: An ENTRYPOINT allows you to configure a container that will run as an executable.</p>
+<p><code>ENTRYPOINT &lt;command&gt;</code> (or) <code>ENTRYPOINT ["&lt;exec&gt;", "&lt;arg-1&gt;", ..., "&lt;arg-n&gt;"]</code></p>
+<p>Only the last ENTRYPOINT instruction will be effective.</p>
+<p>//Dockerfile to demonstrate the behavior of ENTRYPOINT</p>
+<pre><code>FROM busybox:latest
+ENTRYPOINT [&quot;echo&quot;, &quot;Dockerfile ENTRYPOINT demo&quot;]
+</code></pre>
+
+<p><code>&gt; sudo docker build -t entrypoint-demo .</code></p>
+<p><code>&gt; sudo docker run entrypoint-demo</code></p>
+<p><strong>Output</strong> : Dockerfile ENTRYPOINT demo</p>
+<p><code>&gt; sudo docker run entrypoint-demo with additional arguments</code></p>
+<p><strong>Output</strong> : Dockerfile ENTRYPOINT demo with additional arguments</p>
+<p><code>&gt; sudo docker run -it --entrypoint="/bin/sh" entrypoint-demo</code></p>
+<p><strong>Output</strong> : /#</p>
+<p><strong>HEALTHCHECK</strong>: The <code>HEALTHCHECK</code> instruction tells Docker how to test a container to check that it is still working.</p>
+<p><code>HEALTHCHECK [&lt;options&gt;] CMD &lt;command&gt;</code></p>
+<p>Only the last HEALTHCHECK instruction will take effect.</p>
+<p><code>HEALTHCHECK --interval=5m --timeout=3s CMD curl -f http://localhost/ || exit 1</code></p>
+<p><strong>Push image to DockerHub</strong></p>
+<p><code>$ docker images -a</code></p>
+<p><code>$ docker login</code></p>
+<p>Username: sivaprasadreddy</p>
+<p>Password: my_password</p>
+<ul>
+<li><code>docker push sivaprasadreddy/myapp</code></li>
+</ul>
+<p>Delete Image</p>
+<ul>
+<li><code>docker rmi sivaprasadreddy/myapp</code></li>
+</ul>
+<h2 id="docker-cleanup">Docker cleanup</h2>
+<p>Delete volumes</p>
+<ul>
+<li><code>docker volume rm $(docker volume ls -qf dangling=true)</code></li>
+<li><code>docker volume ls -qf dangling=true | xargs -r docker volume rm</code></li>
+</ul>
+<p>Delete networks</p>
+<ul>
+<li><code>docker network ls</code></li>
+<li><code>docker network ls | grep "bridge"</code></li>
+<li><code>docker network rm $(docker network ls | grep "bridge" | awk '/ / { print $1 }')</code></li>
+<li><code>docker network prune</code></li>
+</ul>
+<p>Remove docker images</p>
+<ul>
+<li><code>docker images</code></li>
+<li><code>docker rmi $(docker images -q)</code> //delete all images</li>
+<li><code>docker rmi $(docker images --filter "dangling=true" -q --no-trunc)</code></li>
+<li><code>docker images | grep "none"</code></li>
+<li><code>docker rmi $(docker images | grep "none" | awk '/ / { print $3 }')</code></li>
+</ul>
+<p>Remove docker containers</p>
+<ul>
+<li><code>docker ps -a</code></li>
+<li><code>docker kill $(docker ps -q)</code></li>
+<li><code>docker rm $(docker ps -qa --no-trunc --filter "status=exited")</code></li>
+</ul>
+<p>Docker System Prune</p>
+<pre><code>$ docker system prune -a
+
+WARNING! This will remove:
+    - all stopped containers
+    - all volumes not used by at least one container
+    - all networks not used by at least one container
+    - all images without at least one container associated to them
+Are you sure you want to continue? [y/N] y
+</code></pre>
+
+<p>Resize disk space for docker vm</p>
+<ul>
+<li><code>docker-machine create --driver virtualbox --virtualbox-disk-size "40000" default</code></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ansible/" class="btn btn-neutral float-right" title="Ansible">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ansible/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
